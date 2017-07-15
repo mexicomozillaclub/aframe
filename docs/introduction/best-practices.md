@@ -12,58 +12,41 @@ order: 11
 [mixins]: ../core/mixins.md
 [template]: https://github.com/ngokevin/kframe/tree/master/components/template/
 
-Some best practices for the framework:
+Algunas de las mejores prácticas para el framework son:
 
-- The core structure of A-Frame is [entity-component (ECS)][ecs]. Place and
-  structure application code within purely A-Frame components for reusability,
-  modularity, composability, decoupling, encapsulation, declarativeness, and
-  testability. It's okay to start out at first using content scripts
-  (`<script>`), but look to move towards components.
-- [Mixins][mixins] and [templating][template] are useful to reuse and reduce
-  repeated HTML.
+- La estructura del núcleo de A-Frame está basada en [entidad-componente (ECS)][ecs]. Coloca y estructura el código de la aplicación solo con los componentes de A-Frame para facilitar la reutilización, modularidad, composición, decoupling, encapsular, declaratividad, y pruebas. Está bien empezar a probar usando contenedores de scripts
+  (`<script>`), pero procura utilizar componentes.
+- [Mezclar código][mixins] y [hacer plantillas][template] es útil para reutilizar y reducir código HTML repetitivo.
 
-## Performance
+## Desempeño
 
 [asm]: ../core/asset-management-system.md
 [hardware]: ./vr-headsets-and-webvr-browsers.md
 [merge]: ../components/geometry.md#mergeto
 [stats]: ../components/stats.md
 
-Performance is critical in VR. A high framerate must be maintained in order for
-people to feel comfortable and as if they were in another place. Here are some
-ways to help improve performance of an A-Frame scene:
+El desempeño es crítico en VR. Una alta tasa de cuadros por segundo debe ser mantenida para hacer sentir al usuario cómodo y como si estuviera en otro lugar. A continuación encontrarás algunas formas de mejorar el desempeño de una escena de A-Frame:
 
-- Use [recommended hardware specifications][hardware].
-- Use the **[stats component][stats]** to keep an eye on various metrics (FPS,
-  vertex and face count, geometry and material count, draw calls, number of entities). We
-  want to maximize FPS and minimize everything else.
-- Make use of the **[asset management system][asm]** to benefit from browser
-  caching and preloading. Trying to fetch assets while rendering is slower than
-  fetching all assets before rendering.
-- If using models, look to bake your lights into textures rather than relying
-  on real-time lighting and shadows.
-- Generally, the fewer number of entities and lights in the scene, the better.
-- Make sure your textures' resolutions are sized to powers of two (e.g.,
-  256x256, 512x1024) in order to avoid the renderer having to resize the
-  texture during runtime.
-- Limit the number of faces and vertices on models.
-- Some further techniques (not yet documented) include geometry instancing,
-  geometry merging, level of detail (LOD).
-- When using raycasters or colliders, select which entities are to be raycasted
-  against rather than raycasting against every object in the scene.
-- When adding continuously running behaviors, use A-Frame component `tick`
-  handlers to hook into the global render loop. Use utilities such as
-  `AFRAME.utils.throttleTick` to limit the number of times the `tick` handler
-  is run if appropriate.
+- Usa las [especificaciones de hardware recomendadas.][hardware].
+- Usa las **[estadísticas del componente][stats]**  para estar atento de varias métricas. (FPS, vertex and face count, geometry and material count, draw calls, number of entities). Queremos maximizar la cantidad de cuadros por segundo y minimizar todo lo demás.
 
-### `tick` Handlers
+- Usa el **[sistema de administración de assets][asm]**  para beneficiarte del cache del navegador y del precargado. Tratar extraer assets durante el renderizado es más lento que traer todos los assets antes de renderizar.
 
-In component tick handlers, be frugal on creating new objects. Try to reuse
-objects. A pattern to create private reusable auxiliary variables is with a
-closure. Below we create a helper vector and quaternion and reuse them between
-frames, rather than creating new ones on each frame. Be careful that these
-variables do not hold state because they will be shared between all instances
-of the component. Doing this will reduce memory usage and garbage collection:
+- Si usas modelos, intenta iluminarlos a través de texturas en lugar de ocupar las sombras y luces en tiempo real.
+- Generalmente entre menos entidades y luces en una escena será mejor.
+- Asegúrate de que la resolución de tus texturas están en tamaños basados en dos (ejemplo, 256x256, 512x1024) para evitar que el motor de renderizado rescale las texturas durante la ejecución de la escena.
+- Limita el número de caras y vértices en los modelos.
+- Otras técnicas (aún sin documentar) incluyen instancias de geometría, unión de geometría, nivel de detalles (LOD).
+- Al utilizar raycasters o colliders, selecciona qué entidades serán afectadas por el raycast en lugar de afectar a todos los objetos en la escena.
+- Cuando agregues continuamente comportamientos ejecutandose, usa los manejadores de componentes (`tick`
+  handlers) de A-Frame para enganchar al loop de renderizado global. Usa las utilidades como
+  `AFRAME.utils.throttleTick` para limitar el número de veces que un manejador `tick`
+  es ejecutado si es apropiado.
+
+
+### Manejadores `tick` (`tick` Handlers)
+
+En los manejadores de tick de los componentes, sé frugal al crear nuevos objetos. Trata de reutilizar objetos. Un patrón para crear variables auxiliares privadas reusables es con un cierre. Debajo encontrás cómo creamos un vector de ayuda y un cuaternio, y cómo reusarlos entre cuadros, en lugar de crear nuevos en cada cuadro. Ten cuidado de que estas variables no permanezcan fijas porque estarán siendo compartidas entre todas las instancias del componente. Al hacer esto se reducirá el uso de memoria y la colección de basura:
 
 ```js
 AFRAME.registerComponent('foo', {
@@ -83,11 +66,7 @@ AFRAME.registerComponent('foo', {
 });
 ```
 
-Also if we continuously modify a component in the tick, make sure we pass the
-same object for updating properties. A-Frame will keep track of the latest
-passed object and disable type checking on subsequent calls for an extra speed
-boost. Here is an example of a recommended tick function that modifies the
-rotation on every tick:
+Incluso si continuamente modificamos un componente en el tick, debemos asegurarnos de que pasemos el mismo objeto para actualizar sus propiedades. A-Frame mantendrá seguimiento del último objeto que ha pasado y deshabilitará el type checking y sus llamadas subsecuentes para obtener un incremento extra de velocidad. Aquí hay un ejemplo de una función de tick recomendada que modifica la rotación en cada tick.
 
 ```js
 AFRAME.registerComponent('foo', {
@@ -103,24 +82,19 @@ AFRAME.registerComponent('foo', {
 });
 ```
 
-## VR Design
+## Diseño de VR
 
 [leapmotion]: https://developer.leapmotion.com/assets/Leap%20Motion%20VR%20Best%20Practices%20Guidelines.pdf
 [oculus]: https://developer.oculus.com/documentation/intro-vr/latest/concepts/bp_intro/
 
-Designing for VR is different than designing for flat experiences. As a new
-medium, there are new sets of best practices to follow, especially to maintain
-user comfort and presence. This has been thoroughly written about so we defer
-to these guides. Note that VR interaction design is fairly new, and nothing is
-absolute:
+Diseñar para VR es diferente que diseñar para experiencias planas. Como nuevo medio, hay algunas buenas prácticas a seguir, especialmente para mantener el confort del usuario y presencia.
+Sobre esto ya se ha sido escrito a fondo, así que omitimos estas guías. Toma nota que el diseño de interacción en VR es casi nueva:
 
-- [Oculus Best Practices (for VR)][oculus]
-- [Leap Motion VR Best Practices Guidelines][leapmotion]
+- [Mejores prácticas de Oculus (para VR)][oculus]
+- [Prácticas y lineamientos de mejores prácticas para Leap Motion VR][leapmotion]
 
-Some things to note:
+Toma en cuenta lo siguiente:
 
-- The common golden rule is to never unexpectedly take control of the camera
-  away from users.
-- Units (such as for position) should be considered meters. This is because the
-  WebVR API returns pose in meters which is fed into most camera controls. By
-  considering units as meters, we achieve expected scale.
+- La regla de oro en común es que nunca se quite inesperadamente el control de la cámara de los usuarios.
+- Las unidades (como las de posición) deberán ser consideradas en metros.
+Esto es porque la API de WebVR es alimentada en gran parte de los controles de cámara, la cual ofrece la posición en metros. Al considerar los metros como unidad, se logra la escala esperada.

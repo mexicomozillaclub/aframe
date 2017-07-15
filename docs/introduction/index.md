@@ -17,23 +17,11 @@ installation: true
 
 ## What is A-Frame?
 
-:a:-Frame is a web framework for building virtual reality (VR) experiences. As
-originators of WebVR, the [Mozilla VR team][mozvr] developed A-Frame to be the
-easiest as well as the most powerful way to develop WebVR content. As a [fully
-open project](https://github.com/aframevr/), A-Frame has grown to be one of the
-[largest and most welcoming VR communities](https://aframe.io/community/).
+:a:-Frame es un web framework para construir experiencias de realidad virtual (VR). Como los creadores de webVR, el [equipo de Mozilla VR][mozvr] easiest as well as the most powerful way to develop WebVR content. Por ser un [proyecto totalmente abierto](https://github.com/aframevr/), ha crecido hasta convertirse en una de [las comunidades de VR más grandes y acogedoras](https://aframe.io/community/).
 
-A-Frame is based on top of HTML, making it simple to get started. But A-Frame
-is not just a 3D scene graph or a markup language; the core is a powerful
-entity-component framework that provides a declarative, extensible, and
-composable structure to [three.js].
+A-Frame está basado en HTML, haciéndolo simple para comenzar. Pero A-Frame no es sólo un grafo de escenas 3D (3D scene graph) ni un lenguaje de marcado; el nucleo es un poderoso sistema entidad-componente que provee una estructura declarativa, extensible y componible a [three.js].
 
-A-Frame supports most VR headsets such as Vive, Rift, Daydream, GearVR,
-Cardboard, and can even be used for augmented reality. Although A-Frame
-supports the whole spectrum, A-Frame aims to define fully immersive
-interactive VR experiences that go beyond basic 360&deg; content, making 
-full use of positional tracking and controllers. The Mozilla VR team is 
-currently using A-Frame as the foundation for a Metaverse-in-progress.
+A-Frame soporta muchos de los visores de realidad virtual como Vive, Rift, Daydream, GearVR, Cardboard, e incluso puede ser usado para experiencias de realidad aumentada. A pesar de que A-Frame soporta todo el espectro su objetivo definir experiencias de realidad virtual totalmente inmersivas e interactivas con siguimiento de posición y controles que van más allá de sólo contenido básico 360&deg;. El equipo de Mozilla VR actualmente utiliza A-Frame como base para un Metaverso-en-progreso.
 
 <div class="docs-introduction-examples">
   <a href="https://aframe.io/a-painter/?url=https://ucarecdn.com/962b242b-87a9-422c-b730-febdc470f203/">
@@ -56,19 +44,17 @@ currently using A-Frame as the foundation for a Metaverse-in-progress.
   </a>
 </div>
 
-## Getting Started
+## Primeros pasos
 
 [glitch]: http://glitch.com/~aframe
 
-A-Frame can be developed from a plain HTML file without having to install
-anything! A great way to try out A-Frame is to **[remix the starter example on
-Glitch][glitch]**, an online code editor that instantly hosts and deploys for
-free. Or create an `.html` file and include A-Frame in the `<head>`:
+¡A-Frame puede ser desarrollado desde un archivo plano de HTML sin necesidad de instalar nada! Una gran forma de probar A-Frame es hacer un **[remix del ejemplo inicial disponible en
+Glitch][glitch]**, un editor de código en línea que hospeda e implementa instantaneamente sin costo. También puedes crear un archivo `.html`  que incluya A-Frame en la etiqueta `<head>`:
 
 ```html
 <html>
   <head>
-    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -85,41 +71,29 @@ free. Or create an `.html` file and include A-Frame in the `<head>`:
 [Installation]: ./installation.md
 [school]: https://aframe.io/school/
 
-The [Installation] page provides more options for getting started with A-Frame.
-To get started learning A-Frame, check out [A-Frame School][school] for
-visual step-by-step lessons to complement the documentation.
+La página de [Instalación] provee más opciones para comenzar con A-Frame.
+Para empezar a aprender con A-Frame, revisa la [A-Frame School][school] para lecciones paso a paso que complementan la documentación.
 
-## Features
+## Características
 
-:eyeglasses: **VR Made Simple**: Just drop in a `<script>` tag and `<a-scene>`.
-A-Frame will handle 3D boilerplate, VR setup, and default controls. Nothing to
-install, no build steps.
+:eyeglasses: **VR de manera simple**: Sólo coloca dentro de una etiqueta `<script>` la etiqueta  `<a-scene>`.
+A-Frame se encargará de 3D boilerplate, la instalación de VR, y los controles por default. Sin necesidad de instalar ni pasos para construir.
 
-:heart: **Declarative HTML**: HTML is easy to read, understand, and
-copy-and-paste. Being based on top of HTML, A-Frame is accessible to everyone:
-web developers, VR enthusiasts, artists, designers, educators, makers, kids.
+:heart: **HTML Declarativo**: HTML es fácil de leer, entender y de copiar y pegar. Al estar basado en HTML, A-Frame es accesible para todos: desarolladores web, entusiastas de Realidad Virtual, artistas, diseñadores, educadores, hacedores y niños.
 
-:globe_with_meridians: **Cross-Platform VR**: Build VR applications for Vive,
-Rift, Daydream, GearVR, and Cardboard with support for all respective
-controllers. Don't have a headset or controllers? No problem! A-Frame still
-works on standard desktop and smartphones.
+:globe_with_meridians: **VR Multiplataforma**: Construye aplicaciones VR para Vive,
+Rift, Daydream, GearVR, y Cardboard con soporte para todos sus respectivos controles.
+¿No tienes un visor o controles? ¡No hay problema! A-Frame funciona en computadoras de escritorio y smartphones.
 
 [ecs]: ./entity-component-system.md
 
-:electric_plug: **Entity-Component Architecture**: A-Frame is a powerful
-[three.js] framework, providing a declarative, composable, reusable
-[entity-component structure][ecs]. HTML is just the tip of the iceberg;
-developers have unlimited access to JavaScript, DOM APIs, three.js, WebVR, and
-WebGL.
+:electric_plug: **Arquitectura Entidad-Componente**: A-Frame es un potente framework de [three.js], provee una [estructura entidad-componente][ecs].js. declarativa, componible y reusable. HTML es sólo la punta del iceberg; los desarrolldores tienen acceso ilimitado  a JavaScript, DOM APIs, three.js, WebVR, y WebGL.
 
 [A-Painter]: https://github.com/aframevr/a-painter
 [Tilt Brush]: https://www.tiltbrush.com/
 
-:zap: **Performance**: A-Frame is optimized from the ground up for WebVR. While
-A-Frame uses the DOM, its elements don't touch the browser layout engine. 3D
-object updates are all done in memory with little overhead under a single
-`requestAnimationFrame` call. For reference, see [A-Painter], a [Tilt Brush]
-clone built in A-Frame that runs like native (90+ FPS).
+:zap: **Rendimiento**: A-Frame está optimizado desde la base para WebVR. Mientras
+A-Frame usa DOM, sus elementos no tocan el motor de renderizado del navegador. Las acualizaciones de los objetos 3D son hechas en la memoria con poco sobrecarga para una sola petición `requestAnimationFrame`. Para más referencias puesde ver el [A-Painter], un clon de [Tilt Brush] hecho en A-Frame que corre como una aplicación nativa(90+ FPS).
 
 [React]: https://github.com/aframevr/aframe-react/
 [Preact]: https://github.com/aframevr/aframe-react#using-with-preact
@@ -129,24 +103,20 @@ clone built in A-Frame that runs like native (90+ FPS).
 [Ember.js]: https://www.emberjs.com/
 [jQuery]: http://jquery.com/download/
 
-:hammer: **Tool Agnostic**: Since the Web was built on the notion of HTML,
-A-Frame is compatible with most libraries, frameworks, and tools including
-[React], [Preact], [Vue.js], [Angular], [d3.js], [Ember.js], [jQuery].
+:hammer: **Herramienta Agnostica**: Debido a que la Web fue creada bajo la noción de HTML,
+A-Frame es compatible con la mayoría de las bibliotecas, framework y herramientas incluyendo a [React], [Preact], [Vue.js], [Angular], [d3.js], [Ember.js] y [jQuery].
 
 [inspector]: ./visual-inspector-and-dev-tools.md
 
-:mag: **Visual Inspector**: A-Frame provides a handy built-in [visual 3D
-inspector][inspector]. Open up *any* A-Frame scene, hit `<ctrl> + <alt> + i`,
-and fly around to peek under the hood!
+:mag: **Inspector Visual**: A-Frame tiene un [inspector visual 3D][inspector] incluido. Abre *cualquier* escema de A-Frame, presiona `<ctrl> + <alt> + i` y podrás ver tras bambalinas.
 
 ![Inspector](https://cloud.githubusercontent.com/assets/674727/25377018/27be9cce-295b-11e7-9098-3e85ac1fe172.gif)
 
 [registry]: https://aframe.io/aframe-registry
 
-:package: **Registry**: Take powerful components that developers have published
-and plug them in straight from HTML. Similar to the Unity Asset Store, [the
-A-Frame Registry][registry] collects and curates these components for easy
-discovery.
+:package: **Registro**: Toma los potentes componentes que los desarrolladores han publicado y conéctalos directo desde HTML. Similar a la tienda Unity Asset, [el registro de
+A-Frame][registry] colecciona y cura estos componentes para su fácil descubrimiento.
+
 
 [augmented reality]: https://github.com/jeromeetienne/AR.js#augmented-reality-for-the-web-in-less-than-10-lines-of-html
 [motion capture]: https://github.com/dmarcos/aframe-motion-capture
@@ -159,35 +129,22 @@ discovery.
 [super hands]: https://github.com/wmurphyrd/aframe-super-hands-component
 [teleportation]: https://github.com/fernandojsg/aframe-teleport-controls
 
-:runner: **Components**: Hit the ground running with A-Frame's core components
-such as geometries, materials, lights, animations, models, raycasters, shadows,
-positional audio, text, and Vive / Touch / Daydream / GearVR / Cardboard
-controls. Get even further with community components such as [particle systems],
-[physics], [multiuser], [oceans], [mountains], [speech recognition], [motion capture],
-[teleportation], [super hands], and [augmented reality].
+:runner: **Componentes**: Comienza desde cero con los componentes de A-Frame como figuras geometricas, materiales, luces, animaciones, modelos, destellos, sombras, audio posicional, texto y controles de Vive / Touch / Daydream / GearVR / Cardboard. Ve más allá con los componentes de la comunidad como [sistemas de partículas], [física], [multiusuario], [oceanos], [montañas], [reconocimiento de voz], [captura de movimiento], [teletransportación], [super manos], y [realidad aumentada].
 
-## Off You Go!
+## ¡Comienza!
 
-If it's your first time here, here's a plan for success for getting into
-A-Frame:
+Si es tu primera vez por aquí, este es un plan adentrarse con éxito en A-Frame:
 
-1. For inspiration, check out what other people have built with A-Frame on the
-[Weekly Blog](https://aframe.io/blog/) and
-[awesome-aframe](https://github.com/aframevr/awesome-aframe/). Users of A-Frame
-have included The Washington Post, Amnesty International, Google Creative Labs,
-Al Jazeera, NPR, Shopify, iStaging, and IDEO.
+1. Para inspirarte revisa lo que otros han hecho con A-Frame en el [Blog semanal](https://aframe.io/blog/) y
+[awesome-aframe](https://github.com/aframevr/awesome-aframe/). Entre los usuarios participan organizaciones como The Washington Post, Amnesty International, Google Creative Labs,
+Al Jazeera, NPR, Shopify, iStaging e IDEO.
 
-2. Read through the basic documentation and guides to get a grasp.
+2. Lee la documentación básica y guias para tomar impulso.
 
-3. Run through [A-Frame School](https://aframe.io/school/), a brief
-step-by-step visual tutorial.
+3. Entra en la [A-Frame School](https://aframe.io/school/), y toma un breve tutorial paso a paso.
 
-4. [Join us on Slack](https://aframevr-slack.herokuapp.com) and if you have any
-questions, [search and ask on
-StackOverflow](http://stackoverflow.com/questions/ask/?tags=aframe), and
-someone will get right to you!
+4. [Únete a nuestro Slack](https://aframevr-slack.herokuapp.com)  Si tienes preguntas puedes [buscar o preguntar en StackOverflow](http://stackoverflow.com/questions/ask/?tags=aframe). ¡Seguro alguien te ayudará!
 
-5. When you build something, share your project online and we'll feature it on
-[*A Week of A-Frame*](https://aframe.io/blog/)!
+5. ¡Cuando contruyas algo comparte tu proyecto en línea y lo destacaremos en [*A Week of A-Frame*](https://aframe.io/blog/)!
 
-Have fun!
+¡Diviértete!

@@ -11,29 +11,17 @@ order: 4
 [dom]: https://developer.mozilla.org/docs/Web/API/Document_Object_Model
 [html]: https://developer.mozilla.org/docs/Learn/HTML/Introduction_to_HTML/Getting_started
 
-This section will go over the concepts of A-Frame's primitive elements and
-their relation to the entity-component framework. If you're looking for a guide
-on using HTML and primitives, [check out the *Building a Basic Scene*
-guide](../guides/index.md).
+Esta sección ahondará en los conceptos de los elementos primitivos de A-Frame y su relación con el framework basado en entidad-componente. Si estás buscando una guia para usar HTML y elementos primitivos, [revisa la guia *Building a Basic Scene*](../guides/index.md).
 
 <!--toc-->
 
 ## HTML
 
-A-Frame is based on top of [HTML][html] and [the DOM][dom] using a polyfill for
-Custom Elements. HTML is the building block of the Web, providing one of the
-most accessible computing languages around. There are no installations or build
-steps required, creating with HTML involves just text in an HTML file and
-opening the HTML file in a browser. Since most of the Web was built on top of
-HTML, most existing tools and libraries work with A-Frame including React,
-Vue.js, Angular, d3.js, and jQuery.
+A-Frame está basado sobre [HTML][html] y [el DOM][dom] usando un polyfill para elementos personalizados. HTML es el bloque para construir la web, pues provee uno de los lenguajes de cómputo más accesibles. No se necesitan instalaciones o pasos para construir, crear con HTML involucra sólo texto en un archivo HTML y abrir ese archivo en un navegador. Ya que gran parte de la web está construida con HTML, gran parte las herramientas y bibliotecas que existen funcionan con A-Frame, incluyendo a React, Vue.js, Angular, d3.js y jQuery.
 
 ![HTML Scene](https://cloud.githubusercontent.com/assets/674727/25414676/cb87f7c4-29e7-11e7-9c98-e6880c9def05.jpg)
 
-If you don't have too much experience with HTML, no problem! It's fairly easy
-to pick up and perhaps even easier to grasp than 2D HTML. Once you pick up the
-general structure or syntax of HTML (opening tag, attributes, closing tag),
-then you're good to go! [Read an introduction to HTML on MDN][html].
+¡Si no tienes mucha experiencia con HTML, no hay problema! Es muy fácil de aprender al igual que te será fácil comenzar con una página en HTML de 2D. ¡Una vez que has entendido la estructura y la sintaxis de HTML (etiqueta de apertura, atributos, etiqueta de cierre), estás listo para comenzar! [Lee una introducción a HTML en MDN][html].
 
 ![HTML](https://user-images.githubusercontent.com/6694476/27047689-94689672-4fc6-11e7-9cf5-828a508c6522.jpg)
 
